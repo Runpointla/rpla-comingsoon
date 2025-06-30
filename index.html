@@ -26,7 +26,7 @@
 
     h1 {
       font-size: 3.5em;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.3em;
     }
 
     .sub {
@@ -42,24 +42,52 @@
 
     .email {
       position: absolute;
-      bottom: 20px;
+      bottom: 60px;
       width: 100%;
       text-align: center;
       font-size: 0.9em;
       color: #cccccc;
     }
 
+    .social {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .social a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .social a:hover {
+      color: #bbbbbb;
+    }
+
     .floating {
       position: absolute;
       font-size: 2em;
-      color: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.2);
       animation: float 20s linear infinite;
+    }
+
+    .floating-img {
+      position: absolute;
+      width: 25px;
+      height: auto;
+      opacity: 0.15;
+      animation: float 25s linear infinite;
     }
 
     @keyframes float {
       0% {
         transform: translateY(0) rotate(0deg);
-        opacity: 0.3;
+        opacity: 0.4;
       }
       100% {
         transform: translateY(-1000px) rotate(360deg);
@@ -74,9 +102,15 @@
     <div class="sub">RunPoint LA</div>
     <div class="tagline">Brands + Entertainers = Awesome Campaigns</div>
   </div>
+
   <div class="email">brandon@runpointla.com</div>
 
-  <!-- Floating Xs and Os -->
+  <div class="social">
+    <a href="https://www.instagram.com/runpointla/?hl=en" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@runpointla" target="_blank">TikTok</a>
+  </div>
+
+  <!-- Floating Xs, Os, and Cameras -->
   <script>
     const symbols = ['X', 'O'];
     for (let i = 0; i < 30; i++) {
@@ -89,6 +123,10 @@
       el.style.animationDuration = (10 + Math.random() * 20) + 's';
       document.body.appendChild(el);
     }
-  </script>
-</body>
-</html>
+
+    // Floating cameras
+    for (let i = 0; i < 10; i++) {
+      const img = document.createElement('img');
+      img.src = "https://i.ibb.co/fpDdM4D/camera-line.png"; // Transparent SVG camera icon
+      img.className = 'floating-img';
+      img.s
